@@ -1,14 +1,21 @@
 'use client'
 
 import { useParams, useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { CSSProperties, useEffect, useState } from 'react'
 
 const productTags = ['General', 'Burger', 'Delivery', 'Support']
-
+type Review = {
+  name?: string
+  createdAt: string
+  echo: 'handshake' | 'loved' | 'adored' | 'obsessed' | 'broken'
+  product?: string
+  text: string
+  proofUrl?: string
+}
 export default function BrandProfilePage() {
   const { slug } = useParams()
   const router = useRouter()
-  const [reviews, setReviews] = useState([])
+  const [reviews, setReviews] = useState<Review[]>([])
   const [activeTag, setActiveTag] = useState('General')
 
   const brand = {
@@ -29,11 +36,19 @@ export default function BrandProfilePage() {
     cons: ['Expensive sides', 'Crowded on weekends'],
   }
 
-  useEffect(() => {
-    const saved = JSON.parse(localStorage.getItem(`reviews-${slug}`) || '[]')
+  // useEffect(() => {
+  //   const saved = JSON.parse(localStorage.getItem(`reviews-${slug}`) || '[]')
+  //   setReviews(saved)
+  // }, [slug])
+useEffect(() => {
+  try {
+    const saved: Review[] = JSON.parse(localStorage.getItem(`reviews-${slug}`) || '[]')
     setReviews(saved)
-  }, [slug])
-
+  } catch (error) {
+    console.error('Failed to load reviews from localStorage:', error)
+    setReviews([])
+  }
+}, [slug])
   return (
     <main style={{ backgroundColor: '#0e0e0e', color: 'white', minHeight: '100vh' }}>
       {/* Cover + Logo */}
@@ -123,7 +138,7 @@ export default function BrandProfilePage() {
             <p style={{ color: '#999' }}>No reviews yet.</p>
           ) : (
             reviews
-              .filter(r => r.product === activeTag || activeTag === 'General')
+              .filter(r => r?.product === activeTag || activeTag === 'General')
               .map((rev, i) => (
                 <div key={i} style={reviewCard}>
                   <div style={avatar}>{rev.name?.[0]?.toUpperCase() || 'U'}</div>
@@ -153,14 +168,14 @@ export default function BrandProfilePage() {
 }
 
 /* === Styles === */
-const coverStyle = {
+const coverStyle: CSSProperties = {
   width: '100%',
   height: '100%',
   objectFit: 'cover',
   filter: 'brightness(0.6)',
 }
 
-const logoStyle = {
+const logoStyle: CSSProperties = {
   position: 'absolute',
   bottom: '-32px',
   left: '24px',
@@ -172,14 +187,14 @@ const logoStyle = {
   backgroundColor: '#222',
 }
 
-const echoGrid = {
+const echoGrid: CSSProperties = {
   display: 'flex',
   gap: '12px',
   flexWrap: 'wrap',
   marginBottom: '16px',
 }
 
-const echoItem = {
+const echoItem: CSSProperties = {
   backgroundColor: '#1f1f1f',
   padding: '6px 12px',
   borderRadius: '10px',
@@ -187,7 +202,7 @@ const echoItem = {
   color: 'white',
 }
 
-const reviewButton = {
+const reviewButton: CSSProperties = {
   marginTop: '8px',
   backgroundColor: '#87e64c',
   color: 'black',
@@ -198,7 +213,7 @@ const reviewButton = {
   cursor: 'pointer',
 }
 
-const prosConsWrapper = {
+const prosConsWrapper: CSSProperties = {
   display: 'flex',
   justifyContent: 'space-between',
   gap: '48px',
@@ -207,19 +222,19 @@ const prosConsWrapper = {
   flexWrap: 'wrap',
 }
 
-const prosTitle = {
+const prosTitle: CSSProperties = {
   color: '#87e64c',
   fontSize: '16px',
   marginBottom: '8px',
 }
 
-const consTitle = {
+const consTitle: CSSProperties = {
   color: '#f87171',
   fontSize: '16px',
   marginBottom: '8px',
 }
 
-const listStyle = {
+const listStyle: CSSProperties = {
   listStyle: 'none',
   padding: 0,
   margin: 0,
@@ -227,18 +242,18 @@ const listStyle = {
   fontSize: '14px',
 }
 
-const listItem = {
+const listItem: CSSProperties = {
   marginBottom: '6px',
 }
 
-const filterTabs = {
+const filterTabs: CSSProperties = {
   display: 'flex',
   flexWrap: 'wrap',
   gap: '10px',
   marginBottom: '24px',
 }
 
-const filterTabStyle = {
+const filterTabStyle: CSSProperties = {
   padding: '8px 16px',
   borderRadius: '6px',
   border: '1px solid #333',
@@ -248,7 +263,7 @@ const filterTabStyle = {
   transition: 'all 0.2s',
 }
 
-const reviewCard = {
+const reviewCard: CSSProperties = {
   backgroundColor: '#111',
   padding: '20px',
   borderRadius: '12px',
@@ -257,7 +272,7 @@ const reviewCard = {
   gap: '16px',
 }
 
-const avatar = {
+const avatar: CSSProperties = {
   width: '48px',
   height: '48px',
   borderRadius: '50%',
@@ -271,7 +286,7 @@ const avatar = {
   flexShrink: 0,
 }
 
-const claimBox = {
+const claimBox: CSSProperties = {
   backgroundColor: '#191919',
   border: '1px dashed #444',
   padding: '20px',
@@ -280,7 +295,7 @@ const claimBox = {
   marginBottom: '32px',
 }
 
-const claimButton = {
+const claimButton: CSSProperties = {
   backgroundColor: '#333',
   color: '#fff',
   fontWeight: 500,

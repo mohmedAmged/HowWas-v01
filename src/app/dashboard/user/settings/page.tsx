@@ -9,12 +9,12 @@ export default function UserSettings() {
   const [nickname, setNickname] = useState('')
   const [displayNameOption, setDisplayNameOption] = useState<'full' | 'nickname'>('full')
 
-  const handleImageUpload = (e: any) => {
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (file) setProfileImage(file)
   }
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     console.log('Saving settings:', {
       email,

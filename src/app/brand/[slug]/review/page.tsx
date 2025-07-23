@@ -19,7 +19,7 @@ export default function LeaveReviewPage() {
     firstTime: false,
   })
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     console.log('Review submitted:', form)
     alert('✅ Echo submitted!')

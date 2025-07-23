@@ -6,6 +6,6 @@ interface PageProps {
   }
 }
 
-export default function Page({ params }: PageProps) {
+export default function Page({ params }: { params: { country: string } }) {
   return <CountryPageClient country={params.country} />
 }

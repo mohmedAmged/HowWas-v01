@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 const mockBrands = ['Star Burger', 'Tech World', 'Boba Place']
 const mockCountries = ['Jordan', 'UAE', 'USA']
 
-const mockData = {
+const mockData:any = {
   'Star Burger': {
     country: 'Jordan',
     branches: ['Abdoun', 'Khalda'],
@@ -186,7 +186,7 @@ export default function LeaveReviewPage() {
               <label style={sectionLabel}>Branch</label>
               <select value={form.branch} onChange={(e) => setForm({ ...form, branch: e.target.value })} required style={select}>
                 <option value="">Select a branch</option>
-                {mockData[selectedBrand]?.branches.map((b) => (
+                {mockData[selectedBrand]?.branches.map((b: any) => (
                   <option key={b} value={b}>{b}</option>
                 ))}
               </select>
@@ -199,7 +199,7 @@ export default function LeaveReviewPage() {
               <label style={sectionLabel}>Item</label>
               <select value={form.item} onChange={(e) => setForm({ ...form, item: e.target.value })} style={select}>
                 <option value="general">General Experience</option>
-                {mockData[selectedBrand]?.items.map((item) => (
+                {mockData[selectedBrand]?.items.map((item: any) => (
                   <option key={item} value={item}>{item}</option>
                 ))}
               </select>
@@ -244,7 +244,7 @@ export default function LeaveReviewPage() {
 }
 
 // Styles
-const pageWrapper = {
+const pageWrapper: any = {
   backgroundColor: '#0e0e0e',
   color: 'white',
   padding: '40px 24px',
@@ -253,19 +253,19 @@ const pageWrapper = {
   fontFamily: 'Inter, sans-serif',
 }
 
-const pageTitle = {
+const pageTitle: any = {
   fontSize: '26px',
   fontWeight: 600,
   marginBottom: '24px',
 }
 
-const sectionLabel = {
+const sectionLabel: any = {
   fontSize: '14px',
   fontWeight: 500,
   color: '#ccc',
 }
 
-const brandInput = {
+const brandInput: any = {
   width: '100%',
   padding: '12px 14px',
   borderRadius: '8px',
@@ -275,37 +275,37 @@ const brandInput = {
   fontSize: '15px',
 }
 
-const textarea = {
+const textarea: any = {
   ...brandInput,
   minHeight: '120px',
   lineHeight: 1.5,
 }
 
-const sectionBlock = {
+const sectionBlock: any = {
   display: 'flex',
   flexDirection: 'column',
   gap: '6px',
 }
 
-const radioGroup = {
+const radioGroup: any = {
   display: 'flex',
   gap: '20px',
   alignItems: 'center',
 }
 
-const radioLabel = {
+const radioLabel: any = {
   display: 'flex',
   alignItems: 'center',
   gap: '6px',
   fontSize: '14px',
 }
 
-const radioText = {
+const radioText: any = {
   fontWeight: 500,
   color: '#fff',
 }
 
-const select = {
+const select: any = {
   backgroundColor: '#191919',
   color: 'white',
   padding: '12px 14px',
@@ -314,19 +314,19 @@ const select = {
   border: '1px solid #333',
 }
 
-const fileInput = {
+const fileInput: any = {
   color: '#ccc',
   fontSize: '14px',
 }
 
-const checkboxRow = {
+const checkboxRow: any = {
   display: 'flex',
   alignItems: 'center',
   fontSize: '14px',
   marginTop: '10px',
 }
 
-const submitButton = {
+const submitButton: any = {
   backgroundColor: '#87e64c',
   color: '#000',
   fontWeight: 600,

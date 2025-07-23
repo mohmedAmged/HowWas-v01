@@ -7,7 +7,7 @@ export default function AddItemPage() {
   const [selectedCategory, setSelectedCategory] = useState('')
   const [newCategory, setNewCategory] = useState('')
   const [itemName, setItemName] = useState('')
-  const [availability, setAvailability] = useState<'available' | 'unavailable' | 'coming soon'>('available')
+  const [availability, setAvailability] = useState<string>('available')
 
   const handleSubmit = () => {
     const finalCategory = selectedCategory === 'new' ? newCategory.trim() : selectedCategory
@@ -83,7 +83,7 @@ export default function AddItemPage() {
         <label style={label}>Availability</label>
         <select
           value={availability}
-          onChange={(e) => setAvailability(e.target.value as any)}
+          onChange={(e) => setAvailability(e.target.value as string)}
           style={input}
         >
           <option value="available">✅ Available</option>

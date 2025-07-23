@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Header from '@/components/Header'
 import BrandCard from '@/components/BrandCard'
-import CategoryBar from '@/components/CategoryBar'
 import ReviewCard from '@/components/ReviewCard'
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi'
 
@@ -72,7 +71,6 @@ export default function CountryPage({ params }: { params: { country: string } })
   const [selectedCity, setSelectedCity] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('All')
   const [currentPage, setCurrentPage] = useState(0)
-  const router = useRouter()
 
   const REVIEWS_PER_PAGE = 4
   const start = currentPage * REVIEWS_PER_PAGE
@@ -178,206 +176,206 @@ export default function CountryPage({ params }: { params: { country: string } })
 
 
 /* === Styles === */
-const mainStyle: React.CSSProperties = {
-  backgroundColor: '#0f0f0f',
-  color: 'white',
-  padding: '48px 24px',
-  maxWidth: '1200px',
-  margin: '0 auto',
-  fontFamily: 'Inter, sans-serif',
-}
+// const mainStyle: React.CSSProperties = {
+//   backgroundColor: '#0f0f0f',
+//   color: 'white',
+//   padding: '48px 24px',
+//   maxWidth: '1200px',
+//   margin: '0 auto',
+//   fontFamily: 'Inter, sans-serif',
+// }
 
-const heroStyle: React.CSSProperties = {
-  textAlign: 'center',
-  marginBottom: '48px',
-}
+// const heroStyle: React.CSSProperties = {
+//   textAlign: 'center',
+//   marginBottom: '48px',
+// }
 
-const titleStyle: React.CSSProperties = {
-  fontSize: '36px',
-  fontWeight: 700,
-  marginBottom: '12px',
-}
+// const titleStyle: React.CSSProperties = {
+//   fontSize: '36px',
+//   fontWeight: 700,
+//   marginBottom: '12px',
+// }
 
-const subtitleStyle: React.CSSProperties = {
-  color: '#bbb',
-  fontSize: '16px',
-  marginBottom: '28px',
-}
+// const subtitleStyle: React.CSSProperties = {
+//   color: '#bbb',
+//   fontSize: '16px',
+//   marginBottom: '28px',
+// }
 
-const searchContainer: React.CSSProperties = {
-  display: 'flex',
-  justifyContent: 'center',
-  gap: '12px',
-  flexWrap: 'wrap',
-}
+// const searchContainer: React.CSSProperties = {
+//   display: 'flex',
+//   justifyContent: 'center',
+//   gap: '12px',
+//   flexWrap: 'wrap',
+// }
 
-const searchInput: React.CSSProperties = {
-  width: '100%',
-  maxWidth: '420px',
-  padding: '14px 18px',
-  borderRadius: '10px',
-  border: '1px solid #333',
-  backgroundColor: '#191919',
-  color: 'white',
-  fontSize: '16px',
-}
+// const searchInput: React.CSSProperties = {
+//   width: '100%',
+//   maxWidth: '420px',
+//   padding: '14px 18px',
+//   borderRadius: '10px',
+//   border: '1px solid #333',
+//   backgroundColor: '#191919',
+//   color: 'white',
+//   fontSize: '16px',
+// }
 
-const searchButton: React.CSSProperties = {
-  padding: '14px 24px',
-  backgroundColor: '#87e64c',
-  border: 'none',
-  borderRadius: '8px',
-  color: 'white',
-  fontSize: '16px',
-  fontWeight: 600,
-  cursor: 'pointer',
-}
+// const searchButton: React.CSSProperties = {
+//   padding: '14px 24px',
+//   backgroundColor: '#87e64c',
+//   border: 'none',
+//   borderRadius: '8px',
+//   color: 'white',
+//   fontSize: '16px',
+//   fontWeight: 600,
+//   cursor: 'pointer',
+// }
 
-const cityDropdownWrapper: React.CSSProperties = {
-  marginTop: '24px',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  gap: '8px',
-}
+// const cityDropdownWrapper: React.CSSProperties = {
+//   marginTop: '24px',
+//   display: 'flex',
+//   flexDirection: 'column',
+//   alignItems: 'center',
+//   gap: '8px',
+// }
 
-const cityLabel: React.CSSProperties = {
-  fontSize: '14px',
-  color: '#ccc',
-  fontWeight: 500,
-}
+// const cityLabel: React.CSSProperties = {
+//   fontSize: '14px',
+//   color: '#ccc',
+//   fontWeight: 500,
+// }
 
-const selectContainer: React.CSSProperties = {
-  position: 'relative',
-  display: 'inline-block',
-  width: '100%',
-  maxWidth: '300px',
-}
+// const selectContainer: React.CSSProperties = {
+//   position: 'relative',
+//   display: 'inline-block',
+//   width: '100%',
+//   maxWidth: '300px',
+// }
 
-const citySelect: React.CSSProperties = {
-  width: '100%',
-  appearance: 'none',
-  WebkitAppearance: 'none',
-  MozAppearance: 'none',
-  padding: '14px 18px',
-  borderRadius: '10px',
-  backgroundColor: '#191919',
-  color: '#fff',
-  border: '1px solid #333',
-  fontSize: '16px',
-  fontWeight: 500,
-  cursor: 'pointer',
-}
+// const citySelect: React.CSSProperties = {
+//   width: '100%',
+//   appearance: 'none',
+//   WebkitAppearance: 'none',
+//   MozAppearance: 'none',
+//   padding: '14px 18px',
+//   borderRadius: '10px',
+//   backgroundColor: '#191919',
+//   color: '#fff',
+//   border: '1px solid #333',
+//   fontSize: '16px',
+//   fontWeight: 500,
+//   cursor: 'pointer',
+// }
 
-const chevronIcon: React.CSSProperties = {
-  position: 'absolute',
-  top: '50%',
-  right: '14px',
-  transform: 'translateY(-50%)',
-  pointerEvents: 'none',
-  fontSize: '14px',
-  color: '#999',
-}
+// const chevronIcon: React.CSSProperties = {
+//   position: 'absolute',
+//   top: '50%',
+//   right: '14px',
+//   transform: 'translateY(-50%)',
+//   pointerEvents: 'none',
+//   fontSize: '14px',
+//   color: '#999',
+// }
 
-const sectionTitle: React.CSSProperties = {
-  fontSize: '22px',
-  fontWeight: 600,
-  marginBottom: '20px',
-}
+// const sectionTitle: React.CSSProperties = {
+//   fontSize: '22px',
+//   fontWeight: 600,
+//   marginBottom: '20px',
+// }
 
-const cardGrid: React.CSSProperties = {
-  display: 'flex',
-  gap: '16px',
-  flexWrap: 'wrap',
-}
+// const cardGrid: React.CSSProperties = {
+//   display: 'flex',
+//   gap: '16px',
+//   flexWrap: 'wrap',
+// }
 
-const brandGrid: React.CSSProperties = {
-  display: 'flex',
-  gap: '20px',
-  flexWrap: 'wrap',
-}
-const reviewBannerWrapper: React.CSSProperties = {
-  backgroundColor: '#1c1c1c',
-  borderRadius: '24px',
-  padding: '36px 24px',
-  display: 'flex',
-  justifyContent: 'center',
-  marginTop: '60px',
-  marginBottom: '60px',
-}
+// const brandGrid: React.CSSProperties = {
+//   display: 'flex',
+//   gap: '20px',
+//   flexWrap: 'wrap',
+// }
+// const reviewBannerWrapper: React.CSSProperties = {
+//   backgroundColor: '#1c1c1c',
+//   borderRadius: '24px',
+//   padding: '36px 24px',
+//   display: 'flex',
+//   justifyContent: 'center',
+//   marginTop: '60px',
+//   marginBottom: '60px',
+// }
 
-const reviewBannerContent: React.CSSProperties = {
-  maxWidth: '1100px',
-  width: '100%',
-  display: 'flex',
-  gap: '40px',
-  alignItems: 'center',
-  flexWrap: 'wrap',
-}
+// const reviewBannerContent: React.CSSProperties = {
+//   maxWidth: '1100px',
+//   width: '100%',
+//   display: 'flex',
+//   gap: '40px',
+//   alignItems: 'center',
+//   flexWrap: 'wrap',
+// }
 
-const mainLoginButton: React.CSSProperties = {
-  backgroundColor: 'white',
-  color: 'black',
-  border: 'none',
-  padding: '12px 24px',
-  borderRadius: '9999px',
-  fontWeight: 600,
-  fontSize: '16px',
-  cursor: 'pointer',
-}
+// const mainLoginButton: React.CSSProperties = {
+//   backgroundColor: 'white',
+//   color: 'black',
+//   border: 'none',
+//   padding: '12px 24px',
+//   borderRadius: '9999px',
+//   fontWeight: 600,
+//   fontSize: '16px',
+//   cursor: 'pointer',
+// }
 
-const socialIcon: React.CSSProperties = {
-  width: '36px',
-  height: '36px',
-  borderRadius: '50%',
-  backgroundColor: '#000',
-  padding: '6px',
-  border: '1px solid #444',
-  objectFit: 'contain',
-}
+// const socialIcon: React.CSSProperties = {
+//   width: '36px',
+//   height: '36px',
+//   borderRadius: '50%',
+//   backgroundColor: '#000',
+//   padding: '6px',
+//   border: '1px solid #444',
+//   objectFit: 'contain',
+// }
 
-const reviewImagesWrapper: React.CSSProperties = {
-  display: 'flex',
-  gap: '12px',
-}
+// const reviewImagesWrapper: React.CSSProperties = {
+//   display: 'flex',
+//   gap: '12px',
+// }
 
-const reviewImg: React.CSSProperties = {
-  width: '80px',
-  height: '100px',
-  borderRadius: '16px',
-  objectFit: 'cover',
-}
+// const reviewImg: React.CSSProperties = {
+//   width: '80px',
+//   height: '100px',
+//   borderRadius: '16px',
+//   objectFit: 'cover',
+// }
 
-const reviewHeader: React.CSSProperties = {
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  marginBottom: '20px',
-}
+// const reviewHeader: React.CSSProperties = {
+//   display: 'flex',
+//   justifyContent: 'space-between',
+//   alignItems: 'center',
+//   marginBottom: '20px',
+// }
 
-const navControls: React.CSSProperties = {
-  display: 'flex',
-  gap: '10px',
-}
+// const navControls: React.CSSProperties = {
+//   display: 'flex',
+//   gap: '10px',
+// }
 
-const navButton: React.CSSProperties = {
-  width: '36px',
-  height: '36px',
-  borderRadius: '999px',
-  border: '1px solid #444',
-  backgroundColor: '#191919',
-  color: '#fff',
-  fontSize: '18px',
-  cursor: 'pointer',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  transition: 'background-color 0.2s, border-color 0.2s',
-}
+// const navButton: React.CSSProperties = {
+//   width: '36px',
+//   height: '36px',
+//   borderRadius: '999px',
+//   border: '1px solid #444',
+//   backgroundColor: '#191919',
+//   color: '#fff',
+//   fontSize: '18px',
+//   cursor: 'pointer',
+//   display: 'flex',
+//   alignItems: 'center',
+//   justifyContent: 'center',
+//   transition: 'background-color 0.2s, border-color 0.2s',
+// }
 
 
-const navButtonHover = {
-  backgroundColor: '#87e64c',
-  borderColor: '#87e64c',
-  color: '#fff',
-}
+// const navButtonHover = {
+//   backgroundColor: '#87e64c',
+//   borderColor: '#87e64c',
+//   color: '#fff',
+// }

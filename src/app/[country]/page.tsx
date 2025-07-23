@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+// import { useRouter } from 'next/navigation'
 import Header from '@/components/Header'
 import BrandCard from '@/components/BrandCard'
 import ReviewCard from '@/components/ReviewCard'

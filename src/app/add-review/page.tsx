@@ -1,12 +1,16 @@
 'use client'
 
-import { useState } from 'react'
+import { CSSProperties, useState } from 'react'
 import { useRouter } from 'next/navigation'
-
+type BrandData = {
+  country: string
+  branches: string[]
+  items: string[]
+}
 const mockBrands = ['Star Burger', 'Tech World', 'Boba Place']
 const mockCountries = ['Jordan', 'UAE', 'USA']
 
-const mockData:any = {
+const mockData: Record<string, BrandData> = {
   'Star Burger': {
     country: 'Jordan',
     branches: ['Abdoun', 'Khalda'],
@@ -23,6 +27,7 @@ const mockData:any = {
     items: ['Milk Tea', 'Mango Boba'],
   },
 }
+
 
 export default function LeaveReviewPage() {
   const router = useRouter()
@@ -52,7 +57,7 @@ export default function LeaveReviewPage() {
     setForm((prev) => ({ ...prev, branch: '', item: 'general' }))
   }
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     console.log('📝 Review submitted:', {
       brand: selectedBrand,
@@ -186,7 +191,7 @@ export default function LeaveReviewPage() {
               <label style={sectionLabel}>Branch</label>
               <select value={form.branch} onChange={(e) => setForm({ ...form, branch: e.target.value })} required style={select}>
                 <option value="">Select a branch</option>
-                {mockData[selectedBrand]?.branches.map((b: any) => (
+                {mockData[selectedBrand]?.branches.map((b: string) => (
                   <option key={b} value={b}>{b}</option>
                 ))}
               </select>
@@ -199,7 +204,7 @@ export default function LeaveReviewPage() {
               <label style={sectionLabel}>Item</label>
               <select value={form.item} onChange={(e) => setForm({ ...form, item: e.target.value })} style={select}>
                 <option value="general">General Experience</option>
-                {mockData[selectedBrand]?.items.map((item: any) => (
+                {mockData[selectedBrand]?.items.map((item: string) => (
                   <option key={item} value={item}>{item}</option>
                 ))}
               </select>
@@ -244,7 +249,7 @@ export default function LeaveReviewPage() {
 }
 
 // Styles
-const pageWrapper: any = {
+const pageWrapper: CSSProperties = {
   backgroundColor: '#0e0e0e',
   color: 'white',
   padding: '40px 24px',
@@ -253,19 +258,19 @@ const pageWrapper: any = {
   fontFamily: 'Inter, sans-serif',
 }
 
-const pageTitle: any = {
+const pageTitle: CSSProperties = {
   fontSize: '26px',
   fontWeight: 600,
   marginBottom: '24px',
 }
 
-const sectionLabel: any = {
+const sectionLabel: CSSProperties = {
   fontSize: '14px',
   fontWeight: 500,
   color: '#ccc',
 }
 
-const brandInput: any = {
+const brandInput: CSSProperties = {
   width: '100%',
   padding: '12px 14px',
   borderRadius: '8px',
@@ -275,37 +280,37 @@ const brandInput: any = {
   fontSize: '15px',
 }
 
-const textarea: any = {
+const textarea: CSSProperties = {
   ...brandInput,
   minHeight: '120px',
   lineHeight: 1.5,
 }
 
-const sectionBlock: any = {
+const sectionBlock: CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
   gap: '6px',
 }
 
-const radioGroup: any = {
+const radioGroup: CSSProperties = {
   display: 'flex',
   gap: '20px',
   alignItems: 'center',
 }
 
-const radioLabel: any = {
+const radioLabel: CSSProperties = {
   display: 'flex',
   alignItems: 'center',
   gap: '6px',
   fontSize: '14px',
 }
 
-const radioText: any = {
+const radioText: CSSProperties = {
   fontWeight: 500,
   color: '#fff',
 }
 
-const select: any = {
+const select: CSSProperties = {
   backgroundColor: '#191919',
   color: 'white',
   padding: '12px 14px',
@@ -314,19 +319,19 @@ const select: any = {
   border: '1px solid #333',
 }
 
-const fileInput: any = {
+const fileInput: CSSProperties = {
   color: '#ccc',
   fontSize: '14px',
 }
 
-const checkboxRow: any = {
+const checkboxRow: CSSProperties = {
   display: 'flex',
   alignItems: 'center',
   fontSize: '14px',
   marginTop: '10px',
 }
 
-const submitButton: any = {
+const submitButton: CSSProperties = {
   backgroundColor: '#87e64c',
   color: '#000',
   fontWeight: 600,

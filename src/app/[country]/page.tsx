@@ -65,8 +65,12 @@ const sampleReviews = [
   },
 ]
 
-
-export default function CountryPage({ params }: { params: { country: string } }) {
+interface CountryPageProps {
+  params: {
+    country: string
+  }
+}
+export default function CountryPage({ params }: CountryPageProps) {
   const [search, setSearch] = useState('')
   const [selectedCity, setSelectedCity] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('All')

@@ -1,0 +1,65 @@
+.wrapper {
+  margin-top: 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0 0 32px;
+}
+
+.label {
+  font-size: 16px;
+  color: #bbb;
+  margin-bottom: 16px;
+}
+
+.logoScroller {
+  position: relative;
+  overflow: hidden;
+  height: 60px;
+}
+
+.track {
+  display: flex;
+  gap: 48px;
+  animation: scroll 30s linear infinite;
+  align-items: center;
+  padding: 0 60px;
+}
+
+.logo {
+  height: 36px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+.logo:hover {
+  opacity: 1;
+}
+
+.fadeLeft,
+.fadeRight {
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.fadeLeft {
+  left: 0;
+  background: linear-gradient(to right, #0f0f0f, transparent);
+}
+
+.fadeRight {
+  right: 0;
+  background: linear-gradient(to left, #0f0f0f, transparent);
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

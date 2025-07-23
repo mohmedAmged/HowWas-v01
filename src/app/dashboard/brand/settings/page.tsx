@@ -24,7 +24,7 @@ export default function BrandSettingsPage() {
     privacyPractices: '',
   })
 
-  const handleChange = (field: string, value: any) => {
+  const handleChange = (field: string, value: string | boolean) => {
     setForm((prev) => ({
       ...prev,
       [field]: value,
@@ -38,7 +38,7 @@ export default function BrandSettingsPage() {
     }))
   }
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     alert('✅ Settings updated!')
   }

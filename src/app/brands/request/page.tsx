@@ -16,7 +16,7 @@ export default function BrandRequestPage() {
 
   const [submitted, setSubmitted] = useState(false)
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     console.log('Brand request submitted:', form)
     setSubmitted(true)
@@ -26,7 +26,7 @@ export default function BrandRequestPage() {
   return (
     <main style={pageWrapper}>
       <h1 style={pageTitle}>📩 Request to Add a Brand</h1>
-      <p style={subtext}>Couldn’t find your brand? Submit it here and we'll verify it shortly.</p>
+      <p style={subtext}>Couldn&rsquo;t find your brand? Submit it here and we&apos;ll verify it shortly.</p>
 
       {!submitted ? (
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>

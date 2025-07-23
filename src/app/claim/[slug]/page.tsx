@@ -18,12 +18,12 @@ export default function ClaimBrandPage() {
   const [loading, setLoading] = useState(false)
   const [submitted, setSubmitted] = useState(false)
 
-  const handleFileChange = (e: any) => {
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (file) setForm({ ...form, proof: file })
   }
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
 
@@ -42,7 +42,7 @@ export default function ClaimBrandPage() {
 
   return (
     <main style={wrapper}>
-      <h1 style={heading}>✅ Claim "{slug?.toString().replace(/-/g, ' ')}"</h1>
+      <h1 style={heading}>✅ Claim &quot;{slug?.toString().replace(/-/g, ' ')}&quot;</h1>
       <p style={subheading}>Fill out the form to verify your ownership or authorized role.</p>
 
       {!submitted ? (

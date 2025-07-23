@@ -62,9 +62,13 @@ export default function RegisterUserPage() {
       if (!res.ok) throw new Error(data?.message || 'Registration failed')
 
       setSuccess('✅ Account created successfully!')
-    } catch (err: any) {
-      setError(err.message)
-    } finally {
+    } catch (err: unknown) {
+  if (err instanceof Error) {
+    setError(err.message)
+  } else {
+    setError('An unknown error occurred.')
+  }
+} finally {
       setLoading(false)
     }
   }

@@ -2,6 +2,7 @@ import CountryPageClient from "@/components/CountryPageClient"
 
 
 
-export default function Page({ params }: { params: { country: string } }) {
-  return <CountryPageClient country={params.country} />
+export default async function Page({ params }: { params: Promise<{ country: string }> }) {
+  const {country} = (await params)
+  return <CountryPageClient country={country} />
 }

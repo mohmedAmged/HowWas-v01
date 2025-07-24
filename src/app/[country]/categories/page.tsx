@@ -29,7 +29,7 @@ export default function CategoriesPage() {
         {categoryGroups.map((group) => (
           <div key={group.slug} style={cardStyle}>
             <h3 style={cardTitle}>
-              {group.icon} {group.label}
+               {group.label}
             </h3>
 
             <ul style={subListStyle}>

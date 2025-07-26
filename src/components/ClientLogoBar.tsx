@@ -2,18 +2,23 @@
 
 import React from 'react'
 import styles from './ClientLogoBar.module.css'
-
+import brand1 from '../imgs/artigianelli-seeklogo.png'
+import brand2 from '../imgs/elecosoft-seeklogo.png'
+import Image from 'next/image'
 const logos = [
-  '/logos/langchain.svg',
-  '/logos/resend.svg',
-  '/logos/loops.svg',
-  '/logos/mobbin.svg',
-  '/logos/gopuff.svg',
-  '/logos/betashares.svg',
-  '/logos/submagic.svg',
-  '/logos/mozilla.svg',
-  '/logos/github.svg',
-  '/logos/1password.svg',
+  brand1,
+  brand2,
+  brand1,
+  brand2,
+  brand1,
+  brand2,
+  brand1,
+  brand2,
+  brand1,
+  brand2,
+  brand1,
+  brand2,
+
 ]
 
 export default function ClientLogoBar() {
@@ -24,8 +29,8 @@ export default function ClientLogoBar() {
         <div className={styles.fadeLeft}></div>
         <div className={styles.fadeRight}></div>
         <div className={styles.track}>
-          {logos.concat(logos).map((src, i) => (
-            <img key={i} src={src} alt="Client logo" className={styles.logo} />
+          {logos.map((src, i) => (
+            <Image key={i} src={src} alt={`brand_${i}`} width={100} height={40}/>
           ))}
         </div>
       </div>

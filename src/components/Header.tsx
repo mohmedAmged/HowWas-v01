@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
-
+import logo1 from '../imgs/846d1995-0d7c-4877-a794-04a4d60315ce.png'
 export default function Header() {
   const router = useRouter()
 
@@ -31,8 +31,8 @@ export default function Header() {
       <div style={containerStyle}>
         {/* Logo */}
         <Link href="/" style={logoStyle}>
-          <Image src="/logo-howwaz.svg" alt="Howwaz" width={28} height={28} />
-          <span style={{ fontWeight: 600, fontSize: '18px' }}>howwaz</span>
+          <Image src={logo1} alt="Howwaz" width={120} height={80} />
+          {/* <span style={{ fontWeight: 600, fontSize: '18px' }}>howwaz</span> */}
         </Link>
 
         {/* Navigation */}

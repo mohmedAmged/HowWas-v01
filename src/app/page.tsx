@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Header from '@/components/Header'
 import ClientLogoBar from '@/components/ClientLogoBar'
+import Link from 'next/link'
 
 export default function MainPage() {
   const [search, setSearch] = useState('')
@@ -73,12 +74,14 @@ export default function MainPage() {
           <h3 style={ctaTextStyle}>
             Own a business? Let your brand be part of the trust loop.
           </h3>
-          <button
+          {/* <button
             style={searchButtonStyle}
             onClick={() => router.push('/add-brand')}
           >
             Add Your Brand
-          </button>
+          </button> */}
+          <Link className='hover:no-underline mt-2' href='/register/brand' style={searchButtonStyle}>
+          Add Your Brand</Link>
         </section>
       </main>
     </>
@@ -165,6 +168,7 @@ const searchButtonStyle: React.CSSProperties = {
   fontSize: '16px',
   fontWeight: 600,
   cursor: 'pointer',
+  marginTop: '10px'
 }
 
 const addBrandBannerStyle: React.CSSProperties = {
@@ -178,7 +182,7 @@ const addBrandBannerStyle: React.CSSProperties = {
 
 const ctaTextStyle: React.CSSProperties = {
   fontSize: '20px',
-  marginBottom: '14px',
+  marginBottom: '25px',
   color: 'white',
 }
 

@@ -2,9 +2,10 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import Header from '@/components/Header'
+// import Header from '@/components/Header'
 import ClientLogoBar from '@/components/ClientLogoBar'
 import Link from 'next/link'
+import MyNavbar from '@/components/MyNavbar'
 
 export default function MainPage() {
   const [search, setSearch] = useState('')
@@ -18,7 +19,7 @@ export default function MainPage() {
 
   return (
     <>
-      <Header />
+      <MyNavbar />
 
       {/* Promo Bar */}
       <div style={promoBarStyle}>

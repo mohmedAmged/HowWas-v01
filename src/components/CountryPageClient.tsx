@@ -1,10 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import Header from '@/components/Header'
+// import Header from '@/components/Header'
 import BrandCard from '@/components/BrandCard'
 import ReviewCard from '@/components/ReviewCard'
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi'
+import MyNavbar from './MyNavbar'
 
 interface CountryPageClientProps {
   country: string
@@ -94,7 +95,7 @@ export default function CountryPageClient({ country }: CountryPageClientProps) {
 
   return (
     <>
-      <Header />
+      <MyNavbar />
       <main style={{ backgroundColor: '#0f0f0f', color: 'white', padding: '48px 24px', maxWidth: '1200px', margin: '0 auto', fontFamily: 'Inter, sans-serif' }}>
         <section style={{ textAlign: 'center', marginBottom: '48px' }}>
           <h1 style={{ fontSize: '36px', fontWeight: 700, marginBottom: '12px' }}>Explore Trust in {countryCapitalized}</h1>

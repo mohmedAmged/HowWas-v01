@@ -2,7 +2,8 @@
 
 import { useState, useMemo } from 'react'
 import RedesignedBrandCard from '@/components/BrandCard'
-import Header from '@/components/Header'  // ✅ import the header
+// import Header from '@/components/Header'  // ✅ import the header
+import MyNavbar from '@/components/MyNavbar'
 
 const sampleBrands = [
   {
@@ -59,7 +60,7 @@ export default function AllBrandsPage() {
 
   return (
     <>
-      <Header /> {/* ✅ header is now part of the page */}
+      <MyNavbar /> {/* ✅ header is now part of the page */}
 
       <main style={{ backgroundColor: '#0f0f0f', color: 'white', padding: '48px 24px', minHeight: '100vh' }}>
         {/* Filters */}

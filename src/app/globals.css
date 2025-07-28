@@ -1,7 +1,7 @@
 /* === Global Custom Styles === */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+
 :root {
   --font-inter: 'Inter', system-ui, Arial, sans-serif;
   --color-bg: #0f0f0f;
@@ -45,7 +45,9 @@ h1 {
 h2 {
   font-size: 1.5rem;
 }
-
+.nav-link{
+  color: #fff;
+}
 p {
   margin-bottom: 16px;
   color: var(--color-subtle);
